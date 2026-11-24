@@ -13,7 +13,7 @@
     <groupId>edu.rico</groupId>
     <artifactId>examen-cine</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>examen-cine</name>
+    <name>examenRest</name>
     <description>Examen API REST - Cine</description>
 
     <properties>
