@@ -1,11 +1,13 @@
 package edu.ruben.examen_cine.examen.model.entity;
 
-import jakarta.annotation.Generated;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -29,6 +31,9 @@ public class Pelicula {
 
     @Column(name = "duracion")
     private int minutos;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "pelicula_id", referencedColumnName = "reparto_id", nullable = false)
 
     public long getId_pelicula() {
         return id_pelicula;
