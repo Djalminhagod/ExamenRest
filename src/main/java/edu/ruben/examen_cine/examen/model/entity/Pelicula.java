@@ -32,8 +32,19 @@ public class Pelicula {
     @Column(name = "duracion")
     private int minutos;
 
+    public Pelicula() {
+    }
+
+    public Pelicula(long id_pelicula, String titulo, String director, int anion, int minutos) {
+        this.id_pelicula = id_pelicula;
+        this.titulo = titulo;
+        this.director = director;
+        this.anion = anion;
+        this.minutos = minutos;
+    }
+
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "pelicula_id", referencedColumnName = "reparto_id", nullable = false)
+    @JoinColumn(name = "pelicula_id", nullable = false)
 
     public long getId_pelicula() {
         return id_pelicula;
@@ -73,6 +84,10 @@ public class Pelicula {
 
     public void setMinutos(int minutos) {
         this.minutos = minutos;
+    }
+
+    public void addReparto() {
+
     }
 
 }

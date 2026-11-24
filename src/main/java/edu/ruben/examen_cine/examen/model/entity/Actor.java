@@ -28,8 +28,17 @@ public class Actor {
     @Column(name = "nacionalidad", length = 60, nullable = false)
     private String nacionalidad;
 
+    public Actor() {
+    }
+
+    public Actor(long id, String nombre, String nacionalidad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.nacionalidad = nacionalidad;
+    }
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "")
+    @JoinColumn(name = "actor_id")
 
     public long getId() {
         return id;

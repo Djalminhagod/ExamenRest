@@ -28,11 +28,20 @@ public class Reparto {
     @Column(name = "salario")
     private double salario;
 
+    public Reparto() {
+    }
+
+    public Reparto(Long id, String personaje, double salario) {
+        this.id = id;
+        this.personaje = personaje;
+        this.salario = salario;
+    }
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "reparto_id", referencedColumnName = "pelicula_id")
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "")
+    @JoinColumn(name = "reparto_id", referencedColumnName = "actor_id")
     public Long getId() {
         return id;
     }
